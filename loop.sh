@@ -1,8 +1,8 @@
 #!/bin/bash
 # 设置开始系统时间
-date -s $1
+# date -s $1
 # 初始化git仓库
-output=`git init`
+# output=`git init`
 # 计算天数
 days=$(($(($(($(date -d $2 "+%s" ) - $(date -d $1 "+%s" ))) / 86400 ))+1))
 # 获取当前执行脚本的绝对路径
@@ -27,5 +27,5 @@ time=`date +'%G%m%d %H:%M:%S' -d '+1 days'`
 output=`date -s "$time"`
 done
 
-git remote add origin git@github.com:Fixdq/auto.git
-git push -u origin master 
+# git remote add origin git@github.com:Fixdq/auto.git
+# git push -u origin master 
