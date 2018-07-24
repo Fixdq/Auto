@@ -14,8 +14,8 @@ do
 random=$((RANDOM % 3 + 1))
         for i in $(seq 1 $random)
         do
-#		输出内容 模拟更改
-		time=$(date "+%Y%m%d-%H%M%S")
+#	输出内容 模拟提交
+	time=$(date "+%Y%m%d-%H%M%S")
         echo $time >> ${basepath}"/log"
 #       echo $time > ${basepath}"/log"
         git add .
@@ -24,7 +24,7 @@ random=$((RANDOM % 3 + 1))
         done
 #　当前时间+1天
 time=`date +'%G%m%d %H:%M:%S' -d '+1 days'`
-# 更新提交时间
+# 更新系统时间
 output=`date -s "$time"`
 done
 
@@ -32,7 +32,7 @@ done
 git remote add origin git@github.com:Fixdq/auto.git
 git push -u origin master 
 
-# 执行脚本命令
+# 执行脚本 示例
 # bash loop.sh 2017-05-01 2018-7-22
 # 设置系统时间
 # date -s "2017-07-22 23:54:00"
